@@ -36,6 +36,10 @@ console.log("Window loaded!");
     const resetButton = document.getElementById("reset");
     resetButton.addEventListener("click", resetClick);
 
+    // calling encrypt 
+    // const encryptButton = document.getElementById("encrypt-button");
+    // encryptButton.addEventListener("click", handleClick);
+
 
     // Note: In this function, we usually want to set up our event handlers
     // for UI elements on the page.
@@ -44,6 +48,8 @@ console.log("Window loaded!");
   // Add any other functions in this area (you should not implement your
   // entire program in the init function, for similar reasons that
   // you shouldn't write an entire Java program in the main method).
+
+  // cipher example
   function shiftCipher(text) {
     text = text.toLowerCase();
     let result = "";
@@ -60,5 +66,18 @@ console.log("Window loaded!");
     }
     return result;
   }
+
+  // reset function
+  function resetClick() {
+
+  }
+
+  // encrypt function
+  function handleClick() {
+    const inputText = document.getElementById("input-text").value;
+    const encryptedText = shiftCipher(inputText);
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = encryptedText;
+    }
 
 })();
