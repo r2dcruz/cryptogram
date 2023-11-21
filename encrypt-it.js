@@ -1,4 +1,7 @@
 /*
+  Romaine De La Cruz
+  assignment 6
+
  * Starter file 
  */
 
@@ -8,14 +11,14 @@ console.log("Window loaded!");
 (function() {
   "use strict";
 
-  // C
-  function handleClick() {
-    console.log("Button clicked!");
-  }
+  // function handleClick() {
+  //   console.log("Button clicked!");
+  // }
 
-  function resetClick() {
-    console.log("reset clicked")
-  }
+  // function resetClick() {
+  //   console.log("Reset clicked!");
+  // }
+  
   /**
    * The starting point in our program, setting up a listener
    * for the "load" event on the window, signalling the HTML DOM has been constructed
@@ -35,11 +38,6 @@ console.log("Window loaded!");
     // calling reset button
     const resetButton = document.getElementById("reset");
     resetButton.addEventListener("click", resetClick);
-
-    // calling encrypt 
-    // const encryptButton = document.getElementById("encrypt-button");
-    // encryptButton.addEventListener("click", handleClick);
-
 
     // Note: In this function, we usually want to set up our event handlers
     // for UI elements on the page.
@@ -69,11 +67,23 @@ console.log("Window loaded!");
 
   // reset function
   function resetClick() {
+    console.log("Reset clicked!");
+
+    // reset the input field
+    const inputText = document.getElementById("input-text");
+    inputText.value = "";
+    // const inputText = document.getElementById("input-text").value;
+    // const reset = document.getElementById("input-text").innerHTML;
+
+    // reset the results field
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = "";
 
   }
 
   // encrypt function
   function handleClick() {
+    console.log("Button clicked")
     const inputText = document.getElementById("input-text").value;
     const encryptedText = shiftCipher(inputText);
     const resultElement = document.getElementById("result");
